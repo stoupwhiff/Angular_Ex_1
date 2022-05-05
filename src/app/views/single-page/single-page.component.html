@@ -1,0 +1,6 @@
+<x-navbar (addStudent)="addStudent = true"></x-navbar>
+<x-hero></x-hero>
+<x-student-list (addStudent)="addStudent = true" (deleted)="deleteStudent($event)" (viewStudent)="viewStudent = true" (selectedStudent)="select($event)" [students]="students"></x-student-list>
+<x-add-student (submitted)="addStudents($event); addStudent = false" (hideAddStudent)="addStudent = false" *ngIf="addStudent"></x-add-student>
+<x-student-details [student]="selected" (hideStudentDetails)="viewStudent = false" *ngIf="viewStudent"></x-student-details>
+<x-footer></x-footer>

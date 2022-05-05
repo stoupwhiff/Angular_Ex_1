@@ -1,0 +1,23 @@
+<div class="overlay" (click)="hideAddStudent.emit()"></div>
+
+<div class="modale">
+    <form (ngSubmit)="addStudent(form)" class="d-flex flex-column justify-content-start gap-1" #form="ngForm">
+        <h4>Add a Student</h4>
+        <hr>
+        <label for="name">Name: </label>
+        <input ngModel required="" type="text" id="name" name="name">
+        <label for="surname">Surname: </label>
+        <input ngModel required="" type="text" id="surname" name="surname">
+        <label for="email">Email: </label>
+        <input ngModel required="" type="text" id="email" name="email">
+        <label for="birth">Date of Birth: </label>
+        <input ngModel required="" type="text" id="birth" name="birth">
+        <label for="profile">Insert Picture's url: </label>
+        <input ngModel required="" type="text" id="profile" name="profile">
+        <hr>
+        <div class="d-flex w-100 justify-content-between">
+            <button class="btn-sm btn-light" type="reset">Clear</button>
+            <button class="btn-sm btn-success" [disabled]="form.invalid" type="submit">Send</button>
+        </div>
+    </form>
+</div>

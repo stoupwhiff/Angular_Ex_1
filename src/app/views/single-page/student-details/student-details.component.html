@@ -1,0 +1,13 @@
+<div class="overlay" (click)="hideStudentDetails.emit()"></div>
+<div class="modale">
+   <div class="d-flex flex-column">
+    <h5>Student: </h5>
+    <hr>
+    <div class="d-flex flex-column gap-2">
+        <img src="{{student.image}}" alt="">
+        <div>{{student.name}} {{student.surname}}</div>
+        <div>Email: {{student.email}}</div>
+        <div>Birthday: {{student.birth | date: "d MMM Y"}}</div>
+    </div>
+   </div>
+</div>

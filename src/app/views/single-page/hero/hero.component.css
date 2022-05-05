@@ -1,0 +1,15 @@
+header {
+    height: 300px;
+}
+
+.masthead {
+    background-image: linear-gradient(to right, rgba(0,0,0, 0.2), rgba(0,0,0, 0.8)), url("https://picsum.photos/1200/299");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.posizioneH1 {
+    bottom: 10%;
+    right: 10%;
+    color: white;
+}

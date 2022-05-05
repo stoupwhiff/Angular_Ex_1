@@ -1,0 +1,43 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-2">
+                <h2 class="ps-sm-4">Student List</h2>
+            </div>
+        </div>
+    </div>
+</main>
+
+<x-hr></x-hr>
+
+<div class="container" *ngIf="students.length > 0; else noStudents">
+    <div class="row mb-3 ps-sm-4">
+        <div class="col-3 fw-bold">Name</div>
+        <div class="col-3 fw-bold">Surname</div>
+        <div class="col-3 fw-bold">Email</div>
+    </div>
+    <div class="row mb-3 ps-sm-4 align-items-center" *ngFor="let student of students">
+        <div class="col-3">{{student.name}}</div>
+        <div class="col-3">{{student.surname}}</div>
+        <div class="col-3 text-truncate">{{student.email}}</div>
+        <div class="col-3 mb-3 d-flex flex-column d-md-block gap-2">
+            <button class="btn-sm btn-info me-md-3" (click)="selectUser(student); viewStudent.emit()">View</button>
+            <button class="btn-sm btn-danger" (click)="deleted.emit(student)">Delete</button>
+        </div>
+        <x-hr></x-hr>
+    </div>
+</div>
+
+<ng-template #noStudents>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <h5>There are no students at the moment.</h5>
+                <div class="d-flex justify-content-between">
+                    <h5>Why don't you add one?</h5>
+                    <button class="btn btn-dark" (click)="addStudent.emit()">Add Student</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
